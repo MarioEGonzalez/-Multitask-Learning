@@ -1,21 +1,11 @@
-# -*- coding: utf-8 -*-
-r"""
-02_entrenar_modelos_y_generar_resultados.py
+02_train_models_and_generate_results.py
 
-Pipeline reproducible para entrenar y evaluar:
-  1) TabNet single-task para jacket/rotor y FFT/STFT/Welch.
-  2) Modelo multitarea PyTorch para FFT/STFT/Welch.
-  3) Métricas por fold, métricas globales OOF, matrices de confusión, figuras y resumen final.
+Reproducible pipeline to train and evaluate:
 
-Entrada:
-  C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible\04_cv5_topk4096
+1. Single-task TabNet for jacket/rotor and FFT/STFT/Welch.
+2. PyTorch multitask model for FFT/STFT/Welch.
+3. Per-fold metrics, global OOF metrics, confusion matrices, figures, and final summary.
 
-Salida:
-  C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible\05_resultados_tabnet
-  C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible\06_resultados_multitask
-  C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible\07_resultados_comparativos
-
-Requisitos:
   pip install numpy pandas scikit-learn matplotlib openpyxl torch pytorch-tabnet
 """
 
