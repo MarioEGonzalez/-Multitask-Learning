@@ -1,46 +1,66 @@
-# -Multitask-Learning
-REPRODUCIBILIDAD DEL ARTÍCULO MULTITASK
+# Multitask-Learning
 
-Artículo:
-Improving Vibration-Based Classification in a Wind Turbine Jacket Structure and Rotor
-through Multitask Learning and Spectral Representations
+REPRODUCIBILITY PACKAGE FOR THE ARTICLE
 
+**Improving Vibration-Based Classification in a Wind Turbine Jacket Structure and Rotor through Multitask Learning and Spectral Representations**
 
-Script 1:
-01_crear_datasets_representaciones_cv5.py
+## Script 1
 
-Qué genera este script:
-1. Dataset base jacket multiclase:
-   - 5740 muestras
-   - 58008 características
-   - 5 clases: Healthy + Crack_Level_1..4
-   - groups = una muestra por grupo
+**01_create_datasets_representations_cv5.py**
 
-2. Dataset base rotor multiclase:
-   - 1120 ventanas
-   - 35 experimentos
-   - 32 ventanas por experimento
-   - 5 clases: Healthy + Imbalance_Level_1..4
-   - groups = identificador de experimento
+### Purpose of this script
 
-3. Representaciones:
-   - FFT log-magnitude
-   - STFT log-power
-   - Welch PSD log-power
+This script generates:
 
-4. Validación cruzada:
-   - StratifiedGroupKFold
-   - 5 folds
-   - Top-K por varianza, K=4096
-   - StandardScaler ajustado solo con train del fold
+### 1. Multiclass Jacket Dataset
 
-Parámetros:
-- Seed = 42
-- STFT: window=hann, nperseg=256, noverlap=128, nfft=256
-- Welch: window=hann, nperseg=512, noverlap=256, nfft=512
-- Top-K = 4096
+* 5740 samples
+* 58008 features
+* 5 classes: Healthy + Crack_Level_1 to Crack_Level_4
+* Groups: one sample per group
 
-Orden de ejecución:
+### 2. Multiclass Rotor Dataset
+
+* 1120 windows
+* 35 experiments
+* 32 windows per experiment
+* 5 classes: Healthy + Imbalance_Level_1 to Imbalance_Level_4
+* Groups: experiment identifier
+
+### 3. Signal Representations
+
+* FFT log-magnitude
+* STFT log-power
+* Welch PSD log-power
+
+### 4. Cross-Validation Pipeline
+
+* StratifiedGroupKFold
+* 5 folds
+* Variance-based Top-K feature selection (K = 4096)
+* StandardScaler fitted exclusively on the training subset of each fold
+
+### Parameters
+
+* Random seed = 42
+* STFT:
+
+  * Window = Hann
+  * nperseg = 256
+  * noverlap = 128
+  * nfft = 256
+* Welch PSD:
+
+  * Window = Hann
+  * nperseg = 512
+  * noverlap = 256
+  * nfft = 512
+* Top-K = 4096
+
+### Execution Order
+
+Run this script first.
+
 1) 01_crear_datasets_representaciones_cv5.
 2) 02_entrenar_modelos_y_generar_resultados
 3) 03_generar_graficas_resultados_articulo
