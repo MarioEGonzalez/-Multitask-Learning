@@ -1,27 +1,26 @@
-# -*- coding: utf-8 -*-
-r"""
-03_generar_graficas_resultados_articulo.py
+03_generate_article_results_figures.py
 
-Genera las gráficas del apartado de resultados del artículo multitask a partir de
-los resultados producidos por los scripts reproducibles 01 y 02.
+Generates the figures for the results section of the multitask article from
+the results produced by reproducible scripts 01 and 02.
 
-Entrada esperada:
-    C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible
+Expected input:
+C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible
 
-Salidas:
-    reproducible\09_figuras_resultados_articulo
+Outputs:
+reproducible\09_article_results_figures
 
-Figuras generadas:
-    1) Matrices de confusión globales multitask para FFT, STFT y Welch.
-    2) Comparación single-task vs multitask para Jacket.
-    3) Comparación single-task vs multitask para Rotor.
-    4) Barras de mejora absoluta Multitask - Single-task.
-    5) PCA 2D y PCA 3D del espacio latente multitask por representación y dataset.
-    6) Excel con datos fuente de las figuras.
+Generated figures:
+1) Global multitask confusion matrices for FFT, STFT, and Welch.
+2) Single-task vs multitask comparison for Jacket.
+3) Single-task vs multitask comparison for Rotor.
+4) Absolute improvement bars: Multitask - Single-task.
+5) 2D PCA and 3D PCA of the multitask latent space by representation and dataset.
+6) Excel file with the source data used for the figures.
 
-Requisitos:
-    pip install numpy pandas matplotlib scikit-learn openpyxl
+Requirements:
+pip install numpy pandas matplotlib scikit-learn openpyxl
 """
+
 
 from pathlib import Path
 import json
