@@ -1,25 +1,18 @@
-# -*- coding: utf-8 -*-
-r"""
-01_crear_datasets_representaciones_cv5.py
-
-Pipeline reproducible para el artículo:
+01_create_datasets_representations_cv5.py
+Reproducible pipeline for the article:
 "Improving Vibration-Based Classification in a Wind Turbine Jacket Structure and Rotor
 through Multitask Learning and Spectral Representations"
+This script creates:
+1. Multiclass base dataset for the jacket structure.
+2. Multiclass base dataset for the rotor.
+3. FFT log-magnitude, STFT log-power, and Welch PSD log-power representations.
+4. CV5 folds with Top-K=4096 and StandardScaler fitted ONLY on the training set of each fold.
+5. Configuration and summary files for traceability.
 
-Este script crea:
-  1) Dataset base multiclase jacket.
-  2) Dataset base multiclase rotor.
-  3) Representaciones FFT log-magnitude, STFT log-power y Welch PSD log-power.
-  4) Folds CV5 con Top-K=4096 y StandardScaler ajustados SOLO con train de cada fold.
-  5) Archivos de configuración y resumen para trazabilidad.
+Requirements:
+pip install numpy pandas scipy h5py scikit-learn joblib tqdm
 
-Salida principal:
-  C:\Users\Usuario\Documents\5. Multi Task k fold\reproducible
-
-Requisitos:
-  pip install numpy pandas scipy h5py scikit-learn joblib tqdm
 """
-
 import os
 import gc
 import json
