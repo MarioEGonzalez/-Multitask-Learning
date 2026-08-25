@@ -1,0 +1,35 @@
+# Dependencies for: Improving Vibration-Based Classification in a Wind Turbine
+# Jacket Structure and Rotor through Multitask Learning and Spectral Representations
+#
+# These packages are the third-party libraries actually imported by the
+# scripts in this repository:
+#   01_crear_datasets_representaciones_cv5.py
+#   02_entrenar_modelos_y_generar_resultados.py
+#   03_generar_graficas_resultados_articulo.py
+#   04_baselines_adicionales_revision.py
+#   05_topk_sensitivity_revision.py
+#   06_robustness_checks_tabnet_weighted_and_negative_control.py
+#
+# Versions are left unpinned here because the scripts themselves do not pin
+# them (script 02 documents: "pip install numpy pandas scikit-learn matplotlib
+# openpyxl torch pytorch-tabnet"). For full reproducibility, replace this file
+# with the exact output of `pip freeze` from the environment used to produce
+# the results reported in the manuscript.
+
+numpy
+pandas
+scipy
+scikit-learn
+torch
+pytorch-tabnet
+matplotlib
+h5py
+joblib
+tqdm
+openpyxl
+
+# Optional: only used by 04_baselines_adicionales_revision.py for the
+# boosting baseline. If not installed, that script automatically falls
+# back to scikit-learn's GradientBoostingClassifier, so this is not a
+# hard requirement.
+# xgboost
